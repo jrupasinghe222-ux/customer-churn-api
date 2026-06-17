@@ -1,12 +1,10 @@
-# 📌 Customer Churn Prediction System
+# Customer Churn Prediction System
 
-## 🔍 Overview
+## Overview
 
 This project predicts whether a telecom customer will churn using machine learning and exposes predictions via an API and web interface.
 
----
-
-## ⚙️ Tech Stack
+## Tech Stack
 
 - Python
 - Scikit-learn
@@ -15,24 +13,19 @@ This project predicts whether a telecom customer will churn using machine learni
 - Streamlit
 - Uvicorn
 
----
-
-## 📊 Problem Statement
+## Problem Statement
 
 Telecom companies lose revenue when customers leave. The goal is to predict churn early so businesses can take preventive actions.
 
----
-
-## 🧠 Machine Learning Approach
+## Machine Learning Approach
 
 - Logistic Regression (final model)
 - Class imbalance handled using `class_weight="balanced"`
 - One-hot encoding for categorical features
 - Pipeline used for preprocessing + model bundling
 
----
 
-## 📈 Evaluation Metrics
+## Evaluation Metrics
 
 Focus was on churn class (minority class):
 
@@ -42,9 +35,7 @@ Focus was on churn class (minority class):
 
 Final model prioritized recall to reduce missed churners.
 
----
-
-## 🚀 API Endpoints
+## API Endpoints
 
 ### POST /predict
 
@@ -67,9 +58,7 @@ Final model prioritized recall to reduce missed churners.
 }
 ```
 
----
-
-## 🖥️ Streamlit UI
+## Streamlit UI
 
 Interactive dashboard for:
 
@@ -77,9 +66,7 @@ Interactive dashboard for:
 - Getting real-time churn prediction
 - Viewing risk level
 
----
-
-## ▶️ How to Run Locally
+## How to Run Locally
 
 ```bash
 pip install -r requirements.txt
@@ -89,9 +76,7 @@ uvicorn api.main:app --reload
 streamlit run streamlit_app.py
 ```
 
----
-
-## 📌 Key Learnings
+## Key Learnings
 
 - End-to-end ML pipeline design
 - Handling imbalanced datasets
