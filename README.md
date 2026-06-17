@@ -52,6 +52,8 @@ Final model prioritized recall to reduce missed churners.
 }
 ```
 
+<img width="500" height="372" alt="image" src="https://github.com/user-attachments/assets/59802f9e-bd40-4c78-8d9b-dcb366ec18d1" />
+
 #### Output
 
 ```json
@@ -60,6 +62,9 @@ Final model prioritized recall to reduce missed churners.
   "risk_level": "high"
 }
 ```
+
+<img width="526" height="266" alt="image" src="https://github.com/user-attachments/assets/34b2a823-2004-4a40-99c5-9795b46e2847" />
+
 
 ## Streamlit UI
 
