@@ -79,7 +79,7 @@ uvicorn api.main:app --reload
 streamlit run streamlit_app.py
 ```
 ## System Architecture
-<img width="1024" height="1536" alt="architecture diagram customer churn" src="https://github.com/user-attachments/assets/d45b3d96-cd2b-42bf-af56-d56c9572bc42" />
+<img width="894" height="1341" alt="architecture diagram customer churn" src="https://github.com/user-attachments/assets/d45b3d96-cd2b-42bf-af56-d56c9572bc42" />
 
 
 ## Key Learnings
@@ -89,4 +89,5 @@ streamlit run streamlit_app.py
 - Model evaluation beyond accuracy
 - API development with FastAPI
 - ML deployment concepts
+- Docker containerization
 - Building interactive ML UI
