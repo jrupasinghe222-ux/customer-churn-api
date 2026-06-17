@@ -1,0 +1,7 @@
+venv
+.venv
+__pycache__
+.git
+*.pyc
+data/
+WA_Fn-UseC_-Telco-Customer-Churn.csv
