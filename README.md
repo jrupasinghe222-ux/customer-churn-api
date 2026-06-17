@@ -4,6 +4,9 @@
 
 This project predicts whether a telecom customer will churn using machine learning and exposes predictions via an API and web interface.
 
+## Live Demo
+https://customer-churn-api.streamlit.app
+
 ## Tech Stack
 
 - Python
@@ -75,6 +78,9 @@ uvicorn api.main:app --reload
 
 streamlit run streamlit_app.py
 ```
+## System Architecture
+<img width="1024" height="1536" alt="architecture diagram customer churn" src="https://github.com/user-attachments/assets/d45b3d96-cd2b-42bf-af56-d56c9572bc42" />
+
 
 ## Key Learnings
 
