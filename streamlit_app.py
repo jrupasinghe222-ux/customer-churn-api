@@ -1,5 +1,8 @@
 import streamlit as st
-import requests
+import joblib
+import pandas as pd
+
+pipeline = joblib.load("models/churn_pipeline.pkl")
 
 st.set_page_config(page_title="Customer Churn Predictor")
 
@@ -136,41 +139,30 @@ if st.button("Predict Churn"):
         "TotalCharges": TotalCharges
     }
 
-    response = requests.post(
-        "http://localhost:8000/predict",
-        json=payload
+    df = pd.DataFrame([payload])
+
+    probability = pipeline.predict_proba(df)[0][1]
+
+    if probability < 0.4:
+        risk_level = "low"
+    elif probability < 0.7:
+        risk_level = "medium"
+    else:
+        risk_level = "high"
+
+    st.subheader("Prediction Result")
+
+    st.metric(
+        "Churn Probability",
+        f"{probability:.2%}"
     )
 
-    if response.status_code == 200:
 
-        result = response.json()
+    if risk_level == "low":
+        st.success("🟢 Low Risk Customer")
 
-        probability = result["churn_probability"]
-        risk_level = result["risk_level"]
-
-        st.subheader("Prediction Result")
-
-        st.metric(
-            "Churn Probability",
-            f"{probability:.2%}"
-        )
-
-        if risk_level.lower() == "low":
-            st.success(
-                "🟢 Low Risk Customer"
-            )
-
-        elif risk_level.lower() == "medium":
-            st.warning(
-                "🟡 Medium Risk Customer"
-            )
-
-        else:
-            st.error(
-                "🔴 High Risk Customer"
-            )
+    elif risk_level == "medium":
+        st.warning("🟡 Medium Risk Customer")
 
     else:
-        st.error(
-            f"API Error ({response.status_code})"
-        )
+        st.error("🔴 High Risk Customer")

@@ -76,13 +76,22 @@ Interactive dashboard for:
 
 ## How to Run Locally
 
+### Run Streamlit App
+
+```bash
+pip install -r requirements.txt
+
+streamlit run streamlit_app.py
+```
+
+### Run FastAPI API
+
 ```bash
 pip install -r requirements.txt
 
 uvicorn api.main:app --reload
-
-streamlit run streamlit_app.py
 ```
+
 ## System Architecture
 <img width="500" height="750" alt="architecture diagram customer churn" src="https://github.com/user-attachments/assets/d45b3d96-cd2b-42bf-af56-d56c9572bc42" />
 
